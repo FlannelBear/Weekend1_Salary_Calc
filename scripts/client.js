@@ -1,10 +1,9 @@
-console.log('js');
-
 $(document).ready(setUp);
 
-function setUp(){
-    console.log('jq');
-}
+// Global Variables
+
+
+// Employee Class
 
 class Employee{
     constructor(firstName, lastName, idNumber, title, annualSalary){
@@ -13,6 +12,16 @@ class Employee{
         this.idNumber = idNumber;
         this.annualSalary = annualSalary;
     }
-}
+} // end Employee Class
+
+// Functions
+
+function setUp(){
+    
+} // end setUp
+
+
+
+
 
 
