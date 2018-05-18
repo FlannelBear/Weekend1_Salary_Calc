@@ -2,6 +2,7 @@ $(document).ready(setUp);
 
 // Global Variables
 
+let employees = [];
 
 // Employee Class
 
@@ -20,6 +21,11 @@ function setUp(){
     
 } // end setUp
 
+function createEmployee(firstName, lastName, idNumber, title, annualSalary){
+    let employee = new Employee(firstName, lastName, idNumber, title, annualSalary);
+    employees.push(employee);
+    return employee;
+} // end createEmployee
 
 
 
