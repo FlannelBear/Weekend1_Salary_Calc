@@ -10,9 +10,42 @@
     <script src="scripts/client.js"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="vendors/bootstrap.min.css">
-    <link rel="stylesheet" href="stlyes/style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
+<header>
+    <div class="container">
+        <div class="row">
+            <h1>Salary Calculator</h1>
+        </div>
+    </div>
+</header>
 <body>
-    
+    <div class="container"> 
+        <div class="row">
+            <h2>Add Employee</h2>
+        </div>
+        <div class="row">
+            <input class="input" type="text" placeholder="First Name" id="firstNameInput">
+            <input class="input" type="text" placeholder="Last Name" id="lastNameInput">
+            <input class="input" type="number" placeholder="ID" id="idInput">
+            <input class="input" type="text" placeholder="Title" id="titleInput">
+            <input class="input" type="text" placeholder="Annual Salary" id="annualSalaryInput">
+        </div>
+        <div class="row">
+            <button class="btn">Submit</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h3>Employees</h3>
+        </div>
+        <div class="row">
+            <!-- Put Table Here -->
+            <h1>TABLE</h1>
+        </div>
+        <div class="row">
+            <h3>Total Monthly: $<span id="monthlyPayroll"></span></h3>
+        </div>
+    </div>
 </body>
 </html>
