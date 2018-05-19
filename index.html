@@ -44,22 +44,26 @@
         </div>
         <div class="row">
             <table id="headingTable">
-                <tr class="tableHeading">
-                    <th class="firstname">First Name</th>
-                    <th class="lastname">Last Name</th>
-                    <th class="id">ID</th>
-                    <th class="title">Title</th>
-                    <th class="salary">Annual Salary</th>
-                </tr>
-            </table>
-            <table id="dataTable">
+                <thead>
+                    <tr class="tableHeading">
+                        <th class="firstname">First Name</th>
+                        <th class="lastname">Last Name</th>
+                        <th class="id">ID</th>
+                        <th class="title">Title</th>
+                        <th class="salary">Annual Salary</th>
+                    </tr>
+                </thead>    
+                <tbody id="dataTable">
                 <!-- <div id="output"> -->
                 <!-- Insert Employee Data in rows and data tables here -->
                 <!-- </div> -->
                 
-            </table>
-            <table>
-                    <tfoot><th colspan="5"></th></tfoot>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="5"></th>
+                    </tr>
+                </tfoot>
             </table>
         </div>
         </div>
@@ -70,7 +74,7 @@
             <button type="button" class="btn btn-danger" id="deleteButton">Delete</button>
             </div>
             <div class="col-7">
-            <h3 id="monthlyCosts">Total Monthly: $<span id="monthlyPayroll">0</span></h3>
+            <h3 class="red" id="monthlyCosts">Total Monthly: $<span id="monthlyPayroll">0</span></h3>
             </div>
         </div>
         </div>

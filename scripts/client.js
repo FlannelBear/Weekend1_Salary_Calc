@@ -21,6 +21,7 @@ class Employee{
 // Functions
 
 function setUp(){
+    checkCosts();
     $('#submitBtn').on('click', executeScript);
     $('#deleteButton').on('click', removeEmployee);
 } // end setUp
@@ -45,8 +46,9 @@ function createEmployee(firstName, lastName, idNumber, title, annualSalary){
 } // end createEmployee
 
 function updateMonthlyTotal(){
-    for( let i = employees.length-1; i < employees.length; i++ ){
-    monthlyTotal += Math.round(employees[i].annualSalary / 12);
+    monthlyTotal = 0;
+    for( let i = 0; i < employees.length; i++ ){
+        monthlyTotal += Math.round(employees[i].annualSalary / 12);
     }
     $('#monthlyPayroll').empty();
     $('#monthlyPayroll').append(monthlyTotal);
@@ -84,28 +86,26 @@ function appendToTable(){
 } // end appendToTable
 
 function checkCosts(){
-    if(monthlyTotal > 20000){
-        $("#monthlyCosts").addClass('red');
+    if(monthlyTotal < 20000){
+        $("#monthlyCosts").removeClass('red');
+    } else {
+        $('#monthlyCosts').addClass('red');
     }
 } // end check costs
 
-function test(){
-    console.log('Test');
-    
-}
-
 function removeEmployee() {
-    let i = 0;
     let employeeID = $('#deleteInput').val();
     for(employee of employees){
-        if(employee.idNumber === employeeID){
-            i = employee.position;
+        if(employeeID === employee.idNumber){
+            employees.splice(employee.position, 1);
+            appendToTable();
+            updateMonthlyTotal();
+            $('#deleteInput').val('');
+            return true;
+        } else {
+            alert('Input valid Employee ID');
         }
     }
-        employees.splice(i, 1);
-        appendToTable();
-        $('#deleteInput').val('');
-        return true;
 }
 
 
