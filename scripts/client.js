@@ -42,19 +42,27 @@ function createEmployee(firstName, lastName, idNumber, title, annualSalary){
     return employee;
 } // end createEmployee
 
+function updateMonthlyTotal(){
+    for( let i = employees.length-1; i < employees.length; i++ ){
+    monthlyTotal += Math.round(employees[i].annualSalary / 12);
+    }
+    $('#monthlyPayroll').empty();
+    $('#monthlyPayroll').append(monthlyTotal);
+    checkCosts();
+} // end updateMonthlyTotal
+
 function appendToTable(){
     // for loop starts at the end (could become problematic when deleting employees happens, unless we don't remove them from the array)
     for(let i = employees.length-1; i < employees.length; i++){
         $('table').append(`<tr id="data"><td>${employees[i].firstName}</td><td>${employees[i].lastName}</td><td>${employees[i].idNumber}</td><td>${employees[i].title}</td><td>${employees[i].annualSalary}</td></tr>`);
-        updateMonthlyTotal(employees[i]);
     }
 } // end appendToTable
 
-function updateMonthlyTotal(employee){
-        monthlyTotal += Math.round((employee.annualSalary / 12));
-        $('#monthlyPayroll').empty();
-        $('#monthlyPayroll').append(monthlyTotal);
-} // end updateMonthlyTotal
+function checkCosts(){
+    if(monthlyTotal > 20000){
+        $("#monthlyCosts").addClass('red');
+    }
+} // end check costs
 
 
 
