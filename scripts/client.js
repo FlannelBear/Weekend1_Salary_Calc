@@ -4,6 +4,7 @@ $(document).ready(setUp);
 
 let employees = [];
 let monthlyTotal = 0;
+let toggle = 2;
 
 // Employee Class
 
@@ -51,10 +52,35 @@ function updateMonthlyTotal(){
     checkCosts();
 } // end updateMonthlyTotal
 
+function classToggle() {
+    // toggle value
+    switch(toggle){
+        case 1:
+            toggle = 2;
+            break;
+        case 2: 
+            toggle = 1;
+            break;
+        default:
+            break;
+    }
+    // determine class
+    switch(toggle){
+        case 1:
+            return 'oddRow';
+            break;
+        case 2:
+            return 'evenRow';
+            break;
+        default:
+            break;
+    }
+}
+
 function appendToTable(){
     // for loop starts at the end (could become problematic when deleting employees happens, unless we don't remove them from the array)
     for(let i = employees.length-1; i < employees.length; i++){
-        $('table').append(`<tr id="data"><td>${employees[i].firstName}</td><td>${employees[i].lastName}</td><td>${employees[i].idNumber}</td><td>${employees[i].title}</td><td>${employees[i].annualSalary}</td></tr>`);
+        $('table').append(`<tr class=${classToggle()} id="data"><td>${employees[i].firstName}</td><td>${employees[i].lastName}</td><td>${employees[i].idNumber}</td><td>${employees[i].title}</td><td>${employees[i].annualSalary}</td></tr>`);
     }
 } // end appendToTable
 
