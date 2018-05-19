@@ -22,7 +22,7 @@ class Employee{
 
 function setUp(){
     $('#submitBtn').on('click', executeScript);
-    $('#deleteButton').on('click', removeRow);
+    $('#deleteButton').on('click', removeEmployee);
 } // end setUp
 
 function executeScript(){
@@ -94,7 +94,7 @@ function test(){
     
 }
 
-function removeRow() {
+function removeEmployee() {
     let i = 0;
     let employeeID = $('#deleteInput').val();
     for(employee of employees){
@@ -102,7 +102,8 @@ function removeRow() {
             i = employee.position;
         }
     }
-        $(`#index${i}`).remove();
+        employees.splice(i, 1);
+        appendToTable();
         $('#deleteInput').val('');
         return true;
 }
