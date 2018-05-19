@@ -26,7 +26,7 @@ function setUp(){
     $('#deleteButton').on('click', removeEmployee);
 } // end setUp
 
-// Alphabetical functions
+// Functions Alphabetically
 
 function appendToTable(){
     $('#dataTable').empty();
@@ -35,13 +35,16 @@ function appendToTable(){
         $('#dataTable').append(`<tr id="index${i}"class=${classToggle(i)}><td class="firstname">${employees[i].firstName}</td><td class="lastname">${employees[i].lastName}</td><td class="id">${employees[i].idNumber}</td><td class="title">${employees[i].title}</td><td class="salary">${employees[i].annualSalary}</td></tr>`);
         employees[i].position = i;
     }
+    return true;
 } // end appendToTable
 
 function checkCosts(){
     if(monthlyTotal < 20000){
         $("#monthlyCosts").removeClass('red');
+        return true;
     } else {
         $('#monthlyCosts').addClass('red');
+        return false;
     }
 } // end check costs
 
@@ -64,6 +67,7 @@ function classToggle(i) {
         default:
             break;
     }
+    return true;
 } // end class toggle
 
 function createEmployee(firstName, lastName, idNumber, title, annualSalary){
@@ -83,6 +87,7 @@ function executeScript(){
     appendToTable();
     // Increases monthly total payroll accordingly
     updateMonthlyTotal();
+    return true;
 } // end runCreateEmployee
 
 function removeEmployee() {
@@ -98,6 +103,7 @@ function removeEmployee() {
             alert('Input valid Employee ID');
         }
     }
+    return true;
 } // end removeEmployee
 
 function updateMonthlyTotal(){
@@ -108,4 +114,5 @@ function updateMonthlyTotal(){
     $('#monthlyPayroll').empty();
     $('#monthlyPayroll').append(monthlyTotal);
     checkCosts();
+    return true;
 } // end updateMonthlyTotal
