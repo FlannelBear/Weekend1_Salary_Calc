@@ -99,11 +99,9 @@ function removeEmployee() {
             updateMonthlyTotal();
             $('#deleteInput').val('');
             return true;
-        } else {
-            alert('Input valid Employee ID');
-        }
+        } 
     }
-    return true;
+    alert('Input valid ID number.');
 } // end removeEmployee
 
 function updateMonthlyTotal(){
