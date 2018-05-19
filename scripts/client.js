@@ -78,7 +78,8 @@ function appendToTable(){
     $('#dataTable').empty();
     // for loop starts at the end (could become problematic when deleting employees happens, unless we don't remove them from the array)
     for(let i = 0; i < employees.length; i++){
-        $('#dataTable').append(`<tr class=${classToggle(i)}><td class="firstname">${employees[i].firstName}</td><td class="lastname">${employees[i].lastName}</td><td class="id">${employees[i].idNumber}</td><td class="title">${employees[i].title}</td><td class="salary">${employees[i].annualSalary}</td></tr>`);
+        $('#dataTable').append(`<tr id="index${i}"class=${classToggle(i)}><td class="firstname">${employees[i].firstName}</td><td class="lastname">${employees[i].lastName}</td><td class="id">${employees[i].idNumber}</td><td class="title">${employees[i].title}</td><td class="salary">${employees[i].annualSalary}</td></tr>`);
+        employees[i].position = i;
     }
 } // end appendToTable
 
@@ -94,8 +95,16 @@ function test(){
 }
 
 function removeRow() {
-    let employee = $('#deleteInput').val();
-
+    let i = 0;
+    let employeeID = $('#deleteInput').val();
+    for(employee of employees){
+        if(employee.idNumber === employeeID){
+            i = employee.position;
+        }
+    }
+        $(`#index${i}`).remove();
+        $('#deleteInput').val('');
+        return true;
 }
 
 
