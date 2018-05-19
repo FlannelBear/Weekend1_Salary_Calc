@@ -32,7 +32,10 @@
             <input class="input" type="number" placeholder="Annual Salary" id="annualSalaryInput">
         </div>
         <div class="row">
+            <div class="col-10"></div>
+            <div class="col-2">
             <button class="btn btn-primary" id="submitBtn">Submit</button>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -41,22 +44,29 @@
         </div>
         <div class="row">
             <table>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Employee ID</th>
-                    <th>Title</th>
-                    <th>Annual Salary</th>
+                <tr class="tableHeading">
+                    <th id="firstname">First Name</th>
+                    <th id="lastname">Last Name</th>
+                    <th id="id">ID</th>
+                    <th id="title">Title</th>
+                    <th id="salary">Annual Salary</th>
                 </tr>
                 <!-- <div id="output"> -->
                 <!-- Insert Employee Data in rows and data tables here -->
                 <!-- </div> -->
+                <tfoot><th colspan="5"></th></tfoot>
             </table>
         </div>
-        <div class="row">
-            <button type="button" class="btn btn-danger col-1.5" id="deleteButton">Delete</button>
-            <h3 class="col-10.5"id="monthlyCosts">Total Monthly: $<span id="monthlyPayroll">0</span></h3>
         </div>
-    </div>
+        <div class="container">
+        <div class="row">
+            <div class="col-2">
+            <button type="button" class="btn btn-danger" id="deleteButton">Delete</button>
+            </div>
+            <div class="col-10">
+            <h3 id="monthlyCosts">Total Monthly: $<span id="monthlyPayroll">0</span></h3>
+            </div>
+        </div>
+        </div>
 </body>
 </html>

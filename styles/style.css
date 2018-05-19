@@ -5,7 +5,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 10vh;
+    height: 15vh;
     background-color: rgba(126, 124, 124, 0.904);
     color: white;
 }
@@ -13,7 +13,33 @@ header {
 body {
     background-color: white;
     position: relative;
-    top: 10vh;
+    top: 15vh;
+}
+
+tfoot th{
+    height: 25px;
+    width: 100%;
+    background-color: rgba(185, 184, 184, 0.877);
+}
+
+table{
+    width: 100%;
+    border: black 1px solid;
+}
+
+th{
+    border: black 1px solid;
+    text-align: left;
+}
+
+td{
+    border: black 1px solid;
+    text-align: left;
+}
+
+input {
+    margin: 5px;
+    border: grey 2px solid;
 }
 
 /* Classes */
@@ -21,14 +47,44 @@ body {
     background-color: rgba(240, 50, 50, 0.8);
 }
 
+.tableHeading {
+    background-color: rgba(185, 184, 184, 0.877);
+}
+
+.container {
+    margin: 30px auto;
+}
+
+.oddRow{
+    background-color: white;
+}
+
+.evenRow{
+    background-color: rgba(221, 220, 220, 0.87);
+}
+
 /* IDs */
 
 #heading {
     margin: auto auto;
-    position: relative;
-    top: 10px;
 }
 
-#monthlyCosts {
-    padding-left: 400px;
+#firstname {
+    width: 200px;
+}
+
+#lastname {
+    width: 200px;
+}
+
+#id {
+    width: 100px;
+}
+
+#title {
+    width: 250px;
+}
+
+#salary {
+    width: 200px;
 }
