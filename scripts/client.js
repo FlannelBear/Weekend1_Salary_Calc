@@ -4,7 +4,6 @@ $(document).ready(setUp);
 
 let employees = [];
 let monthlyTotal = 0;
-let toggle = 2;
 
 // Employee Class
 
@@ -15,6 +14,7 @@ class Employee{
         this.idNumber = idNumber;
         this.title = title;
         this.annualSalary = annualSalary;
+        
     }
 } // end Employee Class
 
@@ -22,6 +22,7 @@ class Employee{
 
 function setUp(){
     $('#submitBtn').on('click', executeScript);
+    $('#deleteButton').on('click', removeRow);
 } // end setUp
 
 function executeScript(){
@@ -52,18 +53,14 @@ function updateMonthlyTotal(){
     checkCosts();
 } // end updateMonthlyTotal
 
-function classToggle() {
-    // toggle value
-    switch(toggle){
-        case 1:
-            toggle = 2;
-            break;
-        case 2: 
-            toggle = 1;
-            break;
-        default:
-            break;
-    }
+function classToggle(i) {
+    let toggle = 0;
+    if(i%2 == 0 || i == 0){
+        toggle = 1;
+    } // odd numbered row on table even though index is even 
+    else {
+        toggle = 2;
+    } // even numbered row on table even though index is odd
     // determine class
     switch(toggle){
         case 1:
@@ -78,9 +75,10 @@ function classToggle() {
 }
 
 function appendToTable(){
+    $('#dataTable').empty();
     // for loop starts at the end (could become problematic when deleting employees happens, unless we don't remove them from the array)
-    for(let i = employees.length-1; i < employees.length; i++){
-        $('table').append(`<tr class=${classToggle()} id="data"><td>${employees[i].firstName}</td><td>${employees[i].lastName}</td><td>${employees[i].idNumber}</td><td>${employees[i].title}</td><td>${employees[i].annualSalary}</td></tr>`);
+    for(let i = 0; i < employees.length; i++){
+        $('#dataTable').append(`<tr class=${classToggle(i)}><td class="firstname">${employees[i].firstName}</td><td class="lastname">${employees[i].lastName}</td><td class="id">${employees[i].idNumber}</td><td class="title">${employees[i].title}</td><td class="salary">${employees[i].annualSalary}</td></tr>`);
     }
 } // end appendToTable
 
@@ -89,6 +87,18 @@ function checkCosts(){
         $("#monthlyCosts").addClass('red');
     }
 } // end check costs
+
+function test(){
+    console.log('Test');
+    
+}
+
+function removeRow() {
+    let employee = $('#deleteInput').val();
+
+}
+
+
 
 
 

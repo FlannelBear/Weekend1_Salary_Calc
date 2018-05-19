@@ -63,28 +63,32 @@ input {
     background-color: rgba(221, 220, 220, 0.87);
 }
 
+.highlight {
+    background-color: rgba(244, 143, 54, 0.911);
+}
+
 /* IDs */
 
 #heading {
     margin: auto auto;
 }
 
-#firstname {
+.firstname {
     width: 200px;
 }
 
-#lastname {
+.lastname {
     width: 200px;
 }
 
-#id {
+.id {
     width: 100px;
 }
 
-#title {
-    width: 250px;
+.title {
+   width: 250px;
 }
 
-#salary {
+.salary {
     width: 200px;
 }
