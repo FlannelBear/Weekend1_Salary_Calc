@@ -32,7 +32,7 @@
             <input class="input" type="number" placeholder="Annual Salary" id="annualSalaryInput">
         </div>
         <div class="row">
-            <button class="btn" id="submitBtn">Submit</button>
+            <button class="btn btn-primary" id="submitBtn">Submit</button>
         </div>
     </div>
     <div class="container">
@@ -40,11 +40,24 @@
             <h3>Employees</h3>
         </div>
         <div class="row">
-            <!-- Put Table Here -->
-            <h1>TABLE</h1>
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Employee ID</th>
+                    <th>Title</th>
+                    <th>Annual Salary</th>
+                </tr>
+                <!-- <div id="output"> -->
+                <!-- Insert Employee Data in rows and data tables here -->
+                <!-- </div> -->
+            </table>
         </div>
         <div class="row">
             <h3>Total Monthly: $<span id="monthlyPayroll"></span></h3>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-danger" id="deleteButton">Delete</button>
         </div>
     </div>
 </body>
