@@ -1,5 +1,11 @@
-/* Organized by selector type and order they appear on the page */
+/* Organized in alphabetical order by selector type */
 /* Elements */
+
+body {
+    position: relative;
+    top: 15vh;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -10,10 +16,14 @@ header {
     color: white;
 }
 
-body {
-    background-color: white;
-    position: relative;
-    top: 15vh;
+input {
+    margin: 5px;
+    border: grey 2px solid;
+}
+
+td{
+    border: black 1px solid;
+    text-align: left;
 }
 
 tfoot th{
@@ -22,27 +32,25 @@ tfoot th{
     background-color: rgba(185, 184, 184, 0.877);
 }
 
-table{
-    width: 100%;
-    border: black 1px solid;
-}
-
 th{
     border: black 1px solid;
     text-align: left;
 }
 
-td{
-    border: black 1px solid;
-    text-align: left;
-}
-
-input {
-    margin: 5px;
-    border: grey 2px solid;
-}
-
 /* Classes */
+
+.container {
+    margin: 30px auto;
+}
+
+.evenRow{
+    background-color: rgba(221, 220, 220, 0.87);
+}
+
+.oddRow{
+    background-color: white;
+}
+
 .red {
     background-color: rgba(240, 50, 50, 0.8);
 }
@@ -51,48 +59,32 @@ input {
     background-color: rgba(185, 184, 184, 0.877);
 }
 
-.container {
-    margin: 30px auto;
-}
-
-.oddRow{
-    background-color: white;
-}
-
-.evenRow{
-    background-color: rgba(221, 220, 220, 0.87);
-}
-
-.highlight {
-    background-color: rgba(244, 143, 54, 0.911);
-}
-
 /* IDs */
 
-#heading {
-    margin: auto auto;
+.cost {
+    background-color: white;
 }
 
 .firstname {
     width: 200px;
 }
 
-.lastname {
-    width: 200px;
+#heading {
+    margin: auto auto;
 }
 
 .id {
     width: 100px;
 }
 
-.title {
-   width: 250px;
+.lastname {
+    width: 200px;
 }
 
 .salary {
     width: 200px;
 }
 
-.cost {
-    background-color: white;
+.title {
+   width: 250px;
 }
