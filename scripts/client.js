@@ -39,10 +39,13 @@ function appendToTable(){
 } // end appendToTable
 
 function checkCosts(){
+    // checks value of monthlyTotal
     if(monthlyTotal < 20000){
+        // if less that 20000 remove red background
         $("#monthlyCosts").removeClass('red');
         return true;
     } else {
+        // if over 20000 add red background
         $('#monthlyCosts').addClass('red');
         return false;
     }
@@ -91,26 +94,40 @@ function executeScript(){
 } // end runCreateEmployee
 
 function removeEmployee() {
+    // takes value from delete input field on html
     let employeeID = $('#deleteInput').val();
+    // iterates through array 
     for(employee of employees){
+        // searches for an object with the idNumber that matches the input
         if(employeeID === employee.idNumber){
+            // splices the employee out of the array using the saved position property
             employees.splice(employee.position, 1);
+            // appends new array to table
             appendToTable();
+            // updates monthly cost
             updateMonthlyTotal();
+            // empties delete input field
             $('#deleteInput').val('');
             return true;
         } 
     }
+    // if no match, alert box appears
     alert('Input valid ID number.');
 } // end removeEmployee
 
 function updateMonthlyTotal(){
+    // resets monthly total to 0
     monthlyTotal = 0;
+    // iterates through employees array
     for( let i = 0; i < employees.length; i++ ){
-        monthlyTotal += Math.round(employees[i].annualSalary / 12);
+        // adds the salary divided by 12 each iteration
+        monthlyTotal += (employees[i].annualSalary / 12);
     }
+    // empties the monthly payroll
     $('#monthlyPayroll').empty();
-    $('#monthlyPayroll').append(monthlyTotal);
+    // appends the new total to the DOM
+    $('#monthlyPayroll').append(monthlyTotal.toFixed(2));
+    // checks the costs and updates the DOM with the appropriate background color
     checkCosts();
     return true;
 } // end updateMonthlyTotal
